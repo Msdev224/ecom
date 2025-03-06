@@ -96,6 +96,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -149,6 +165,38 @@
         "description": "django.contrib.auth.admin",
         "isExtraImport": true,
         "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ModelAdmin",
+        "importPath": "unfold.admin",
+        "description": "unfold.admin",
+        "isExtraImport": true,
+        "detail": "unfold.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ModelAdmin",
+        "importPath": "unfold.admin",
+        "description": "unfold.admin",
+        "isExtraImport": true,
+        "detail": "unfold.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ModelAdmin",
+        "importPath": "unfold.admin",
+        "description": "unfold.admin",
+        "isExtraImport": true,
+        "detail": "unfold.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ModelAdmin",
+        "importPath": "unfold.admin",
+        "description": "unfold.admin",
+        "isExtraImport": true,
+        "detail": "unfold.admin",
         "documentation": {}
     },
     {
@@ -337,6 +385,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse_lazy",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -369,6 +425,30 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -386,19 +466,12 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "django.conf.urls.static",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -410,19 +483,35 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
         "isExtraImport": true,
-        "detail": "django.http",
+        "detail": "pathlib",
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
+        "label": "static",
+        "importPath": "django.templatetags.static",
+        "description": "django.templatetags.static",
         "isExtraImport": true,
-        "detail": "django.http",
+        "detail": "django.templatetags.static",
+        "documentation": {}
+    },
+    {
+        "label": "gettext_lazy",
+        "importPath": "django.utils.translation",
+        "description": "django.utils.translation",
+        "isExtraImport": true,
+        "detail": "django.utils.translation",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -431,6 +520,22 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "format_html",
+        "importPath": "django.utils.html",
+        "description": "django.utils.html",
+        "isExtraImport": true,
+        "detail": "django.utils.html",
         "documentation": {}
     },
     {
@@ -504,7 +609,7 @@
         "kind": 6,
         "importPath": "accounts.admin",
         "description": "accounts.admin",
-        "peekOfCode": "class AccountAdmin(UserAdmin):\n    list_display = ('email', 'first_name', 'last_name', 'username', 'last_login', 'date_joined', 'is_active')\n    list_display_links = ('email', 'first_name', 'last_name')\n    search_fields = ('email', 'username')\n    readonly_fields = ('date_joined', 'last_login')\n    ordering = ('-date_joined',)\n    filter_horizontal = ()\n    list_filter = ()\n    fieldsets = ()\n    add_fieldsets = (",
+        "peekOfCode": "class AccountAdmin(UserAdmin, UnfoldModelAdmin):\n    list_display = ('email', 'first_name', 'last_name', 'username', 'last_login', 'date_joined', 'is_active')\n    list_display_links = ('email', 'first_name', 'last_name')\n    search_fields = ('email', 'username')\n    readonly_fields = ('date_joined', 'last_login')\n    ordering = ('-date_joined',)\n    filter_horizontal = ()\n    list_filter = ()\n    fieldsets = ()\n    add_fieldsets = (",
         "detail": "accounts.admin",
         "documentation": {}
     },
@@ -549,7 +654,7 @@
         "kind": 6,
         "importPath": "carts.admin",
         "description": "carts.admin",
-        "peekOfCode": "class CartItemAdmin(admin.ModelAdmin):\n    list_display = ['product', 'cart', 'quantity', 'is_active']\nclass CartAdmin(admin.ModelAdmin):\n    list_display = ['cart_id', 'date_added']\nadmin.site.register(Cart, CartAdmin)\nadmin.site.register(CartItem, CartItemAdmin)",
+        "peekOfCode": "class CartItemAdmin(UnfoldModelAdmin):\n    list_display = ['product', 'cart', 'quantity', 'is_active']\nclass CartAdmin(UnfoldModelAdmin):\n    list_display = ['cart_id', 'date_added']\nadmin.site.register(Cart, CartAdmin)\nadmin.site.register(CartItem, CartItemAdmin)",
         "detail": "carts.admin",
         "documentation": {}
     },
@@ -558,7 +663,7 @@
         "kind": 6,
         "importPath": "carts.admin",
         "description": "carts.admin",
-        "peekOfCode": "class CartAdmin(admin.ModelAdmin):\n    list_display = ['cart_id', 'date_added']\nadmin.site.register(Cart, CartAdmin)\nadmin.site.register(CartItem, CartItemAdmin)",
+        "peekOfCode": "class CartAdmin(UnfoldModelAdmin):\n    list_display = ['cart_id', 'date_added']\nadmin.site.register(Cart, CartAdmin)\nadmin.site.register(CartItem, CartItemAdmin)",
         "detail": "carts.admin",
         "documentation": {}
     },
@@ -612,7 +717,7 @@
         "kind": 2,
         "importPath": "carts.views",
         "description": "carts.views",
-        "peekOfCode": "def add_cart(request, product_id):\n    product = Product.objects.get(id=product_id)\n    try:\n        cart = Cart.objects.get(cart_id=_cart_id(request))\n    except Cart.DoesNotExist:\n        cart = Cart.objects.create(\n            cart_id = _cart_id(request)\n        )\n        cart.save()\n    try:",
+        "peekOfCode": "def add_cart(request, product_id):\n    if request.method == \"POST\":\n        color = request.POST['color']\n        size = request.POST['size']\n        print(color, size)\n    product = Product.objects.get(id=product_id)\n    try:\n        cart = Cart.objects.get(cart_id=_cart_id(request))\n    except Cart.DoesNotExist:\n        cart = Cart.objects.create(",
         "detail": "carts.views",
         "documentation": {}
     },
@@ -657,7 +762,7 @@
         "kind": 6,
         "importPath": "category.admin",
         "description": "category.admin",
-        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    prepopulated_fields = {'slug': ('category_name',)}\nadmin.site.register(Category, CategoryAdmin)",
+        "peekOfCode": "class CategoryAdmin(UnfoldModelAdmin):\n    prepopulated_fields = {'slug': ('category_name',)}\nadmin.site.register(Category, CategoryAdmin)",
         "detail": "category.admin",
         "documentation": {}
     },
@@ -711,7 +816,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "SECRET_KEY = \"django-insecure-2+rfdxbcfa3d1v_v-j_@blh7=@-ynr&8^&z%qgoafi406*!99u\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "SECRET_KEY = \"django-insecure-2+rfdxbcfa3d1v_v-j_@blh7=@-ynr&8^&z%qgoafi406*!99u\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'unfold.contrib.filters',\n    'unfold.contrib.forms',\n    \"django.contrib.admin\",",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -720,7 +825,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'unfold.contrib.filters',\n    'unfold.contrib.forms',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -729,7 +834,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'unfold.contrib.filters',\n    'unfold.contrib.forms',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -738,7 +843,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'unfold',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    'category',\n    'accounts',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'unfold',\n    'unfold.contrib.filters',\n    'unfold.contrib.forms',\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -864,7 +969,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Pour la prod (avec collectstatic)\n# Si ton fichier script.js est dans static/js/, Django devrait le trouver.\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Pour la prod (avec collectstatic)\n# Si ton fichier script.js est dans static/js/, Django devrait le trouver.\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# unfold admin config\nfrom django.templatetags.static import static\nfrom django.urls import reverse_lazy",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -873,7 +978,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# unfold admin config\nfrom django.templatetags.static import static\nfrom django.urls import reverse_lazy\nfrom django.utils.translation import gettext_lazy as _\n# UNFOLD = {",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -882,7 +987,7 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# unfold admin config\nfrom django.templatetags.static import static\nfrom django.urls import reverse_lazy\nfrom django.utils.translation import gettext_lazy as _\n# UNFOLD = {\n#     \"SITE_TITLE\": 'GREAFKART',",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -891,7 +996,16 @@
         "kind": 5,
         "importPath": "ecom.settings",
         "description": "ecom.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# unfold admin config\nfrom django.templatetags.static import static\nfrom django.urls import reverse_lazy\nfrom django.utils.translation import gettext_lazy as _\n# UNFOLD = {\n#     \"SITE_TITLE\": 'GREAFKART',\n#     \"SITE_HEADER\": 'GREAFKART',\n#     \"SITE_URL\": \"/\",\n#     # SITE_ICON",
+        "detail": "ecom.settings",
+        "documentation": {}
+    },
+    {
+        "label": "UNFOLD",
+        "kind": 5,
+        "importPath": "ecom.settings",
+        "description": "ecom.settings",
+        "peekOfCode": "UNFOLD = {\n    \"SITE_TITLE\": 'GREAFKART',\n    \"SITE_HEADER\": 'GREAFKART',\n    \"SITE_URL\": \"/\",\n    \"SITE_ICON\": {\n        \"light\": lambda request: static('images/favicon.ico'),\n        \"dark\": lambda request: static('images/favicon.ico'),\n    },\n    \"SITE_LOGO\": {\n        \"light\": lambda request: static('images/logo.png'),",
         "detail": "ecom.settings",
         "documentation": {}
     },
@@ -941,11 +1055,47 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "store.migrations.0003_variation",
+        "description": "store.migrations.0003_variation",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0002_alter_product_options'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Variation',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('Variation_category', models.CharField(choices=[('color', 'color'), ('size', 'size')], max_length=100)),",
+        "detail": "store.migrations.0003_variation",
+        "documentation": {}
+    },
+    {
+        "label": "VariationInlineForm",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class VariationInlineForm(forms.ModelForm):\n    class Meta:\n        model = Variation\n        fields = '__all__'\n        widgets = {\n            'variation_category': forms.Select(attrs={'class': 'custom-select', 'style': 'width: 200px; color: black;'}),\n            'variation_value': forms.TextInput(attrs={'class': 'custom-input', 'style': 'width: 250px; font-weight: bold;  color: black;'}),\n            'is_active': forms.CheckboxInput(attrs={'class': 'custom-checkbox', 'style': 'transform: scale(1.5);'}),\n        }\n# Inline admin pour afficher les variations dans ProductAdmin",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
+        "label": "VariationInline",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class VariationInline(admin.TabularInline):  \n    model = Variation\n    form = VariationInlineForm \n    extra = 2  # Nombre de lignes vides par défaut\n    fields = ('variation_category', 'variation_value', 'is_active')\n    fk_name = 'product'  # Spécifie la clé étrangère vers Product\n    classes = ['collapse']  # Ajoute une option de repli pour améliorer l'affichage\nclass ProductAdmin(UnfoldModelAdmin):\n    prepopulated_fields = {'slug': ('product_name',)}\n    list_display = ('image_tag', 'product_name', 'price', 'stock', 'category', 'modified_date', 'created_date', 'is_available')",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
         "label": "ProductAdmin",
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    prepopulated_fields = {'slug': ('product_name',)}\n    list_display = ('product_name', 'price', 'stock', 'category', 'modified_date', 'created_date', 'is_available')\n    list_display_links = ('product_name',)\n    list_filter = ('category', 'created_date', 'is_available')\n    list_editable = ('is_available',)\n    search_fields = ('product_name', 'category')\n    list_per_page = 20\nadmin.site.register(Product, ProductAdmin)",
+        "peekOfCode": "class ProductAdmin(UnfoldModelAdmin):\n    prepopulated_fields = {'slug': ('product_name',)}\n    list_display = ('image_tag', 'product_name', 'price', 'stock', 'category', 'modified_date', 'created_date', 'is_available')\n    list_display_links = ('product_name',)\n    list_filter = ('category', 'created_date', 'is_available')\n    list_editable = ('is_available',)\n    search_fields = ('product_name', 'category__category_name')\n    list_per_page = 20\n    inlines = [VariationInline]\n    def image_tag(self, obj):",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
+        "label": "VariationAdmin",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class VariationAdmin(UnfoldModelAdmin):\n    list_display = ('product', 'variation_category', 'variation_value', 'is_active')\n    list_filter = ('product', 'variation_category', 'variation_value')\n    list_editable = ('is_active',)\nadmin.site.register(Product, ProductAdmin)\nadmin.site.register(Variation, VariationAdmin)",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -964,6 +1114,33 @@
         "importPath": "store.models",
         "description": "store.models",
         "peekOfCode": "class Product(models.Model):\n    product_name    = models.CharField(max_length=200, unique=True)\n    slug            = models.SlugField(max_length=200, unique=True)\n    description     = models.TextField(max_length=500, blank=True)\n    price           = models.DecimalField(max_digits=10, decimal_places=2)\n    image           = models.ImageField(upload_to='photos/products')\n    stock           = models.IntegerField()\n    is_available    = models.BooleanField(default=True)\n    category        = models.ForeignKey(Category, on_delete=models.CASCADE)\n    created_date    = models.DateTimeField(auto_now_add=True)",
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "VariationManager",
+        "kind": 6,
+        "importPath": "store.models",
+        "description": "store.models",
+        "peekOfCode": "class VariationManager(models.Manager):\n    def colors(self):\n        return super(VariationManager,self).filter(variation_category='color', is_active=True)\n    def sizes(self):\n        return super(VariationManager, self).filter(variation_category='size', is_active=True)\nvariation_category_choice = (\n    ('color', 'color'),\n    ('size', 'size'),\n)\nclass Variation(models.Model):",
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Variation",
+        "kind": 6,
+        "importPath": "store.models",
+        "description": "store.models",
+        "peekOfCode": "class Variation(models.Model):\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    variation_category  = models.CharField(max_length=100, choices=variation_category_choice)\n    variation_value     = models.CharField(max_length=100)\n    is_active           = models.BooleanField(default=True)\n    created_date        = models.DateTimeField(auto_now_add=True)\n    objects = VariationManager()\n    def __str__(self):\n        return self.product.product_name",
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "variation_category_choice",
+        "kind": 5,
+        "importPath": "store.models",
+        "description": "store.models",
+        "peekOfCode": "variation_category_choice = (\n    ('color', 'color'),\n    ('size', 'size'),\n)\nclass Variation(models.Model):\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    variation_category  = models.CharField(max_length=100, choices=variation_category_choice)\n    variation_value     = models.CharField(max_length=100)\n    is_active           = models.BooleanField(default=True)\n    created_date        = models.DateTimeField(auto_now_add=True)",
         "detail": "store.models",
         "documentation": {}
     },

@@ -1,12 +1,14 @@
 from django.contrib import admin
 from .models import Cart, CartItem
 
+from unfold.admin import ModelAdmin as UnfoldModelAdmin
 # Register your models here.
 
-class CartItemAdmin(admin.ModelAdmin):
+
+class CartItemAdmin(UnfoldModelAdmin):
     list_display = ['product', 'cart', 'quantity', 'is_active']
 
-class CartAdmin(admin.ModelAdmin):
+class CartAdmin(UnfoldModelAdmin):
     list_display = ['cart_id', 'date_added']
 
 

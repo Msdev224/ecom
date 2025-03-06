@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import django.conf.urls.static
 from pathlib import Path
 import os
 
@@ -33,6 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'unfold',
+    'unfold.contrib.filters',
+    'unfold.contrib.forms',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -145,3 +148,254 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# unfold admin config
+
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+
+# UNFOLD = {
+#     "SITE_TITLE": 'GREAFKART',
+#     "SITE_HEADER": 'GREAFKART',
+#     "SITE_URL": "/",
+#     # SITE_ICON
+#     "SITE_ICON": {
+#         "light": lambda request: static('../static/images/favicon.ico'),
+#         "dark": lambda request: static('../static/images/favicon.ico'),
+#     },
+#     "SITE_LOGO": {
+#         "light": lambda request: static('../static/images/logo.png'),
+#         "dark": lambda request: static('../static/images/logo.png'),
+#     },
+#     "SITE_SYMBOL": "speed",
+#     "site_FAVICONS": [
+#         {
+#             "rel": "icon",
+#             "size": "32x32",
+#             "type": "image/svg+xml",
+#             "href": lambda request: static("favicon.ico")
+#         }
+#     ],
+#     "SHOW_HISTORY": True,
+#     "SHOW_VIEW_ON_SITE": True,
+#     # "ENVIRONMENT": "sample_app.environment_callback",
+#     # "DASHBOARD_CALLBACK": "sample_app.dashboad_callback",
+#     "THEME": "dark",
+#     # "LOGIN": {
+#     #     "image": lambda request: static("sample/login-bg.jpg"),
+#     #     "redirect_after": lambda request: reverse_lazy("admin:APP_MODEL_changelist")
+#     # },
+#     # "STYLES": [
+#     #     lambda request: static("css/style.css"),
+#     # ],
+#     # "SCRIPTS": [
+#     #     lambda request: static("js/script.js"),
+#     # ]
+
+#     "COLORS":{
+#         "primary": {
+#             "50" : "250 245 255",
+#             "100": "243 232 255",
+#             "200": "233 212 255",
+#             "300": "216 180 254",
+#             "400": "192 132 252",
+#             "500": "168 85 247",
+#             "600": "147 51 234",
+#             "700": "126 34 206",
+#             "800": "107 33 168",
+#             "900": "88 28 135",
+#             "950": "59 7 100",
+#         },
+#         # "secondary": {
+#         #     "50" : "255 250 250",
+#         #     "100": "255 240 240",
+#         #     "200": "255 204 204",
+#         #     "300": "255 153 153",
+#         #     "400": "255 102 102",
+#         #     "500": "255 51 51",
+#         #     "600": "255 0 0",
+#         #     "700": "204 0 0",
+#         #     "800": "153 0 0",
+#         #     "900": "102 0 0",
+#         # }
+#     },
+#     # "EXTENSIONS": {
+#     #     "modeltranslation": {
+#     #         "flag": {
+#     #             "en":"🇬🇧" ,
+#     #             "fr": "🇫🇷",
+#     #            # "nl": "🇳",
+#     #         }
+#     #     } 
+#     # },
+
+#     "SIDEBAR": {
+#         "show_search": False,
+#         "show_all_application": False,
+#         "navigation": [
+#             {
+#                 "title": _("Navigation"),
+#                 "separator": True,
+#                 "collapse": False,
+#                 "items": [
+#                     {
+#                         "title": _("Dashboard"),
+#                         "icon": "dashboard",
+#                         "link": reverse_lazy("admin:index"),
+#                         "badge": "sample_app.badge_callback",
+#                         "permissions": lambda request: resuest.user.is_superuser,
+#                     },
+#                     {
+#                         'title': _('Users'),
+#                         'icon': 'people',
+#                         'link': reverse_lazy('admin:accounts_account_changelist'),
+#                     },
+#                 ],
+#             },
+#         ],
+#     },
+#     # "TABS": [
+#     #     {
+#     #         "models": [
+#     #             "app_label.model_name_in_lower_case",
+#     #         ],
+#     #         "items": [
+#     #             {
+#     #                 "title": _("Your custom title"),
+#     #                 # "icon": "dashboard",
+#     #                 "link": reverse_lazy("admin:index"),
+#     #                 "permissions": "sample_app.permission_callback",
+#     #             },
+                
+#     #         ],
+#     #     },
+#     # ],
+# }
+
+# Configuration Unfold pour toute l'application
+UNFOLD = {
+    "SITE_TITLE": 'GREAFKART',
+    "SITE_HEADER": 'GREAFKART',
+    "SITE_URL": "/",
+    "SITE_ICON": {
+        "light": lambda request: static('images/favicon.ico'),
+        "dark": lambda request: static('images/favicon.ico'),
+    },
+    "SITE_LOGO": {
+        "light": lambda request: static('images/logo.png'),
+        "dark": lambda request: static('images/logo.png'),
+    },
+    "SITE_SYMBOL": "speed",
+    "SITE_FAVICONS": [
+        {
+            "rel": "icon",
+            "size": "32x32",
+            "type": "image/svg+xml",
+            "href": lambda request: static("favicon.ico")
+        }
+    ],
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "THEME": "dark",
+    "COLORS":{
+        "primary": {
+            "50" : "250 245 255",
+            "100": "243 232 255",
+            "200": "233 212 255",
+            "300": "216 180 254",
+            "400": "192 132 252",
+            "500": "168 85 247",
+            "600": "147 51 234",
+            "700": "126 34 206",
+            "800": "107 33 168",
+            "900": "88 28 135",
+            "950": "59 7 100",
+        },
+    },
+    "SIDEBAR": {
+    "show_search": True,
+    "show_all_applications": True,
+    "navigation": [
+        {
+            "title": _("Navigation"),
+            "separator": True,
+            "collapse": True,
+            "items": [
+                {
+                    "title": _("Dashboard"),
+                    "icon": "dashboard",
+                    "link": reverse_lazy("admin:index"),
+                    "permissions": lambda request: request.user.is_superuser,
+                },
+                # Accounts app
+                {
+                    'title': _('Users'),
+                    'icon': 'people',
+                    'link': reverse_lazy('admin:accounts_account_changelist'),
+                },
+                # Category app
+                {
+                    'title': _('Categories'),
+                    'icon': 'category',
+                    'link': reverse_lazy('admin:category_category_changelist'),
+                },
+                
+                
+            ],
+        },
+        # Store app
+        {
+            'title': _('Products'),
+            'icon': 'inventory_2',
+            'link': "#", 
+            "items": [
+                {
+                    'title': _('Products'),
+                    'icon': 'inventory_2',
+                    'link': reverse_lazy('admin:store_product_changelist'),
+                },
+                {
+                    'title': _('Variations'),
+                    'icon': 'inventory_2',
+                    'link': reverse_lazy('admin:store_variation_changelist'),
+                },
+            ] # Une valeur est nécessaire pour 'link' avec Unfold
+            
+        },
+        # Carts app - Configuration pour Unfold
+        {
+            'title': _('Shopping'),
+            # 'icon': 'shopping_cart',
+            'link': '#',  # Une valeur est nécessaire pour 'link' avec Unfold
+            'items': [  # Utiliser 'items' pour les sous-menus dans Unfold
+                {
+                    "title": _("Cart"),
+                    "icon": "shopping_cart", 
+                    'link': reverse_lazy('admin:carts_cart_changelist'),
+                },
+                {
+                    'title': _('Cart Items'),
+                    "icon": "shopping_bag",
+                    'link': reverse_lazy('admin:carts_cartitem_changelist'),
+                },
+            ]
+        },
+        # Section pour les configurations et paramètres
+        {
+            "title": _("Settings"),
+            "separator": True,
+            "collapse": True,
+            "permissions": lambda request: request.user.is_superuser,
+            "items": [
+                {
+                    'title': _('User Groups'),
+                    'icon': 'group',
+                    'link': reverse_lazy('admin:auth_group_changelist'),
+                },
+            ],
+        },
+    ],
+},
+
+}

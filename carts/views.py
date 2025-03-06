@@ -1,7 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from store.models import Product
 from .models import Cart, CartItem
+
 
 
 # Create your views here.
@@ -12,6 +14,10 @@ def _cart_id(request):
     return cart
 
 def add_cart(request, product_id):
+    if request.method == "POST":
+        color = request.POST['color']
+        size = request.POST['size']
+        print(color, size)
     product = Product.objects.get(id=product_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
